@@ -1,17 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import ChatInput from "./ChatInput";
+import ChatPage from "./ChatPage";
 import RoomCreate from "./RoomCreate";
+import "./app.css";
 
 const App = () => {
     return (
         <BrowserRouter>
-            <div>
+            <div className="container">
                 <Route path="/" exact>
                     <RoomCreate />
                 </Route>
                 <Route path="/chatBot" exact>
-                    <ChatInput />
+                    <ChatPage />
                 </Route>
             </div>
         </BrowserRouter>

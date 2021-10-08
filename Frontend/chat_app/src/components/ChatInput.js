@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { io } from "socket.io-client";
 
 const ChatInput = () => {
     const [message, setMessage] = useState("");
-    const [chat, setChat] = useState([]);
 
     const socket = io("http://localhost:5000");
-    // socket.on("connection", () => {
-    //     console.log(socket.connect);
-    // });
-
-    useEffect(() => {
-        socket.on("chatMessage", (payload) => {
-            setChat([...chat, payload]);
-            console.log(payload);
-        });
-    }, [chat, socket]);
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
@@ -24,12 +13,7 @@ const ChatInput = () => {
     };
 
     return (
-        <div>
-            <div>
-                {chat.map((chat, index) => {
-                    return <p key={index}>{chat}</p>;
-                })}
-            </div>
+        <div className="chatCreate">
             <form onSubmit={onHandleSubmit}>
                 <div className="formGroup">
                     <input
@@ -39,7 +23,9 @@ const ChatInput = () => {
                         placeholder="Enter Message"
                     />
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" className="btn">
+                    <i class="far fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     );

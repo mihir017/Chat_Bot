@@ -15,9 +15,9 @@ const RoomCreate = () => {
         setRoomName("");
     };
     return (
-        <div>
+        <div className="roomCreate">
             <h2 className="welcomeMsg">Welcome To ChatBot</h2>
-            <div>
+            <div className="formBox">
                 <form onSubmit={onHandleSubmit}>
                     <div className="formGroup">
                         <input
@@ -33,7 +33,7 @@ const RoomCreate = () => {
                             name="language"
                             onChange={(e) => setRoomName(e.target.value)}
                         >
-                            <option value="----">----</option>
+                            <option value="----">Select Room</option>
                             <option value="javascript">JavaScript</option>
                             <option value="paython">Python</option>
                             <option value="java">Java</option>

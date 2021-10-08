@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Ubuntu:wght@300;400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-font: "Poppins", sans-serif;
+    --secondary-font: "Ubuntu", sans-serif;
+}
+body {
+    font-family: var(--secondary-font);
+}
+#root {
+    width: 100%;
+    /* height: 100vh; */
+}
+.container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.roomCreate {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.roomCreate .welcomeMsg {
+    font-family: var(--primary-font);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+/* .roomCreate .formBox{
+  
+} */
+.roomCreate .formBox form {
+    padding: 1rem;
+}
+.roomCreate input,
+.roomCreate select {
+    width: 300px;
+    padding: 0.7rem 1rem;
+    border: 1px solid gray;
+    outline: none;
+    font-size: var(--primary-font);
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    position: relative;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.roomCreate .btn {
+    width: 200px;
+    padding: 0.6rem 0;
+    outline: none;
+    border: 1px solid gray;
+    font-family: var(--secondary-font);
+    color: white;
+    margin-top: 0.6rem;
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(71, 71, 71);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================chat page========================== */
+
+.chatPage {
+    width: 80%;
+    height: 70vh;
+    background-color: blanchedalmond;
+    margin: 0 auto;
+    margin-top: 7rem;
+}
+.chatPage .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(123, 122, 122);
+}
+.chatPage .heading h4 {
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.chatPage .heading .leaveBtn {
+    padding: 0.4rem 1.2rem;
+    border: 1px solid rgba(255, 0, 0, 0.479);
+    background-color: rgba(255, 0, 0, 0.514);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 2px rgba(255, 0, 0, 0.279);
+    cursor: pointer;
+}
+.chatPage .main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: calc(100% - 7rem);
+    background-color: aquamarine;
+}
+.chatPage .main .left {
+    background-color: blueviolet;
+    padding: 1rem;
+}
+/* friend Part */
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.left .friends,
+.left .custom {
+    padding: 0 1rem;
+    /* margin-bottom: 1rem;s */
+}
+.left h3 {
+    font-size: 1.6rem;
+    color: aliceblue;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.left p {
+    font-family: var(--primary-font);
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: rgb(202, 201, 201);
+}
+.left p i {
+    margin-right: 0.8rem;
+    font-size: 1rem;
+    color: white;
+}
+.right {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.message {
+    padding: 0.3rem 1rem;
+    margin-top: 0.5rem;
+    background-color: gray;
+    width: max-content;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 3px rgba(99, 98, 98, 0.4);
+}
+.message .userDetail {
+    display: flex;
+    align-items: center;
+}
+.message .userDetail p {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    color: aliceblue;
+    margin-right: 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.message .userDetail p i {
+    margin-right: 0.4rem;
+}
+.message .userDetail span {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.712);
+}
+.message .msg {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0.2rem 0 0.1rem;
+}
+
+/* friend Part */
+
+/* chat Input */
+
+.chatCreate form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+.chatCreate {
+    width: 100%;
+    height: 3.5rem;
+}
+.chatCreate form Input {
+    padding: 0.5rem 1.3rem;
+    border: 1px solid gray;
+    font-family: var(--primary-font);
+    letter-spacing: 1px;
+    width: 700px;
+    outline: none;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+.chatCreate form button {
+    font-size: 1.2rem;
+    background-color: rgba(27, 145, 255, 0.9);
+    /* border: 1px solid rgb(27, 145, 255); */
+    border: none;
+    padding: 0.47rem 1.3rem;
+    /* margin-left: -3rem; */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px rgba(27, 145, 255, 0.5);
+}
+
+/* chat Input */
+
+/* ==========================chat page========================== */
