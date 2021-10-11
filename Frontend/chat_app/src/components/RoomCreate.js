@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { createRoom } from "./Socket";
-// let socket;
 const RoomCreate = () => {
     const [username, setUsername] = useState("");
     const [roomName, setRoomName] = useState("");

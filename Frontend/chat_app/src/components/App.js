@@ -8,6 +8,8 @@ const App = () => {
     return (
         <BrowserRouter>
             <div className="container">
+                <div className="circle2 circle"></div>
+                <div className="circle3 circle"></div>
                 <Route path="/" exact>
                     <RoomCreate />
                 </Route>

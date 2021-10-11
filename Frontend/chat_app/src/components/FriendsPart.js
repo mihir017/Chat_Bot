@@ -1,17 +1,28 @@
 import React from "react";
 
-const FriendsPart = () => {
+const FriendsPart = ({ roomUsers }) => {
     return (
         <>
             <div className="friends">
-                <h3>Members</h3>
+                <h3>{roomUsers?.room}</h3>
                 <div className="members">
-                    <p>Krupesh</p>
-                    <p>Mihir</p>
-                    <p>Nirav</p>
-                    <p>Sachin</p>
-                    <p>Shahib</p>
+                    <div>
+                        <i class="fas fa-user-tie"></i>
+                        <p>Mihir</p>
+                    </div>
                 </div>
+                {Object.keys(roomUsers).length !== 0 && (
+                    <div className="members">
+                        {roomUsers?.users.map((user) => {
+                            return (
+                                <div>
+                                    <i class="fas fa-user-tie"></i>
+                                    <p>{user.userName}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
             </div>
             <div className="custom">
                 <h3>System</h3>

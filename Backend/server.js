@@ -27,6 +27,11 @@ io.on("connection", (socket) => {
         console.log(
             `user ${user.userName} Join the ${user.roomName} room for Chat`
         );
+        io.to(user.roomName).emit("roomUser", {
+            room: user.roomName,
+            users: getRoomUser(user.roomName),
+            currentUser: user.userName,
+        });
     });
 
     socket.on("chatMessage", (payload) => {
@@ -89,4 +94,6 @@ const getCurrentUser = (id) => {
     return userData.find((user) => user.id === id);
 };
 
-const outUserFromRoom = (id) => {};
+const getRoomUser = (roomname) => {
+    return userData.filter((user) => user.roomName === roomname);
+};

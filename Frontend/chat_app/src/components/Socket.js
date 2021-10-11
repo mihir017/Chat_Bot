@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { io } from "socket.io-client";
 
 let socket;
@@ -20,7 +19,13 @@ export const sendMsg = (msg) => {
 export const subscribedMsg = (callbackMsg) => {
     if (!socket) return true;
     socket.on("chatMessage", (msgData) => {
-        console.log(msgData);
         return callbackMsg(null, msgData);
+    });
+};
+
+export const getUsers = (callbackFunction) => {
+    if (!socket) return true;
+    socket.on("roomUser", (userData) => {
+        return callbackFunction(null, userData);
     });
 };
