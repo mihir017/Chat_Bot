@@ -17,13 +17,13 @@ const FriendsPart = () => {
                 <h3>System</h3>
                 <div className="system">
                     <p>
-                        <i class="far fa-image"></i>WallPaper
+                        <i className="far fa-image"></i>WallPaper
                     </p>
                     <p>
-                        <i class="fas fa-bell"></i>Mute Notification
+                        <i className="fas fa-bell"></i>Mute Notification
                     </p>
                     <p>
-                        <i class="fas fa-sliders-h"></i>settings
+                        <i className="fas fa-sliders-h"></i>settings
                     </p>
                 </div>
             </div>

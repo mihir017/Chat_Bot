@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { io } from "socket.io-client";
-
+import { createRoom } from "./Socket";
+// let socket;
 const RoomCreate = () => {
-    const socket = io("http://localhost:5000");
     const [username, setUsername] = useState("");
     const [roomName, setRoomName] = useState("");
     const history = useHistory();
     const onHandleSubmit = (e) => {
         e.preventDefault();
-        socket.emit("joinRoom", { username, roomName });
+        createRoom({ username, roomName });
         history.push("/chatBot");
         setUsername("");
         setRoomName("");
@@ -48,4 +47,4 @@ const RoomCreate = () => {
     );
 };
 
-export default RoomCreate;
+export default React.memo(RoomCreate);

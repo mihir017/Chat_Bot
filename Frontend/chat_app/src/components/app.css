@@ -102,7 +102,7 @@ body {
     display: grid;
     grid-template-columns: 30% 70%;
     height: calc(100% - 7rem);
-    background-color: aquamarine;
+    background-color: rgb(235, 235, 235);
 }
 .chatPage .main .left {
     background-color: blueviolet;
@@ -150,7 +150,7 @@ body {
     border-radius: 10px;
     margin-left: 1rem;
     margin-top: 1rem;
-    box-shadow: 4px 4px 3px rgba(99, 98, 98, 0.4);
+    box-shadow: 4px 4px 3px rgba(165, 165, 165, 0.5);
 }
 .message .userDetail {
     display: flex;

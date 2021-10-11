@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { io } from "socket.io-client";
-
+import React, { useEffect, useState } from "react";
+import { sendMsg } from "./Socket";
+let socket;
 const ChatInput = () => {
     const [message, setMessage] = useState("");
 
-    const socket = io("http://localhost:5000");
-
     const onHandleSubmit = (e) => {
         e.preventDefault();
-        socket.emit("chatMessage", message);
+        sendMsg(message);
+        // socket.emit("chatMessage", message);
         setMessage("");
+    };
+    const changeMessage = (e) => {
+        setMessage(e.target.value);
     };
 
     return (
@@ -19,16 +21,16 @@ const ChatInput = () => {
                     <input
                         value={message}
                         type="text"
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={changeMessage}
                         placeholder="Enter Message"
                     />
                 </div>
                 <button type="submit" className="btn">
-                    <i class="far fa-paper-plane"></i>
+                    <i className="far fa-paper-plane"></i>
                 </button>
             </form>
         </div>
     );
 };
 
-export default ChatInput;
+export default React.memo(ChatInput);
