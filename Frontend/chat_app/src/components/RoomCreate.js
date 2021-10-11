@@ -33,7 +33,7 @@ const RoomCreate = () => {
                         >
                             <option value="----">Select Room</option>
                             <option value="javascript">JavaScript</option>
-                            <option value="paython">Python</option>
+                            <option value="python">Python</option>
                             <option value="java">Java</option>
                             <option value="php">Php</option>
                             <option value="c#">C#</option>
